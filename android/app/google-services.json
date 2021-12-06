@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "568354785400",
+    "project_id": "tasreeh2021",
+    "storage_bucket": "tasreeh2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568354785400:android:4dc67287cfbe2ba0d5c58d",
+        "android_client_info": {
+          "package_name": "com.atworld.tasreeh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568354785400-qk9lj8mabdk3gb3eo1583pdebfr9at7t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.atworld.tasreeh",
+            "certificate_hash": "189cef3b2095af60463c6a2f5607480d466fcafd"
+          }
+        },
+        {
+          "client_id": "568354785400-ttrpk2dm4e1434t4eppi35eb8osoo6u8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARYvVBD_kGpwSKLdPX3GnDTc8XPi4BWeI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568354785400-ttrpk2dm4e1434t4eppi35eb8osoo6u8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
