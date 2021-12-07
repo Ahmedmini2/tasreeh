@@ -15,28 +15,30 @@ class ContactUS extends StatelessWidget {
         backgroundColor: Color(0xFF79B033),
         title: Text("Profile"),
       ),
-      body: ContactUs(
-        logo: AssetImage('images/crop.jpg'),
-        email: 'adoshi26.ad@gmail.com',
-        companyName: 'Abhishek Doshi',
-        phoneNumber: '+91123456789',
-        dividerThickness: 2,
-        website: 'https://abhishekdoshi.godaddysites.com',
-        githubUserName: 'AbhishekDoshi26',
-        linkedinURL: 'https://www.linkedin.com/in/abhishek-doshi-520983199/',
-        tagLine: 'Flutter Developer',
-        twitterHandle: 'AbhishekDoshi26',
-        taglineColor: Colors.lightGreen,
-        textColor: Colors.black,
-        cardColor: Colors.white,
-        companyColor: Colors.lightGreen,
+      body: Column(
+        children: [
+          SizedBox(height: 40,),
+          ContactUs(
+            logo: AssetImage('assets/images/applogo.png'),
+            email: 'tasreeh@gmail.com',
+            companyName: 'Tasreeh ',
+            phoneNumber: '+971562374807',
+            dividerThickness: 2,
+            tagLine: 'Smart Solutions',
+            taglineColor: Colors.black38,
+            dividerColor: Colors.lightGreen,
+            textColor: Colors.black,
+            cardColor: Colors.white,
+            companyColor: Colors.lightGreen,
 
+          ),
+        ],
       ),
       bottomNavigationBar:ContactUsBottomAppBar(
-        companyName: 'Abhishek Doshi',
+        companyName: 'Tasreeh',
         textColor: Colors.white,
-        backgroundColor: Colors.teal.shade300,
-        email: 'adoshi26.ad@gmail.com',
+        backgroundColor: Colors.lightGreen,
+        email: 'tasreeh@gmail.com',
       ),
     );
   }
