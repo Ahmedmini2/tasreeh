@@ -3,6 +3,7 @@ import 'package:tsareeh/Screens/Login/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tsareeh/Screens/Signup/Models/user_modle.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:tsareeh/Screens/profile/contactus/contact.dart';
 
 import 'profile_menu.dart';
 import 'profile_pic.dart';
@@ -57,7 +58,10 @@ class _Body extends State<Body> {
           ProfileMenu(
             text: "Contact Us",
             icon: "assets/icons/Question mark.svg",
-            press: () {},
+            press: () {
+              Navigator.push(context, new MaterialPageRoute(
+                  builder: (context) => new ContactUS()));
+            },
           ),
           ProfileMenu(
             text: "Log Out",
