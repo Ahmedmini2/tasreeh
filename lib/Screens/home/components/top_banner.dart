@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tsareeh/Screens/QR-Code/genrator.dart';
+import 'package:tsareeh/Screens/QR-Code/random_qr.dart';
 
 import '../../../size_config.dart';
 import 'section_title.dart';
@@ -34,7 +36,10 @@ class TopBanner extends StatelessWidget {
                       image: "assets/images/Artboard 5.png",
                       category: "",
                       numOfBrands: 15,
-                      press: () {},
+                      press: () {
+                        Navigator.push(context, new MaterialPageRoute(
+                            builder: (context) => new RandomQR()));
+                      },
                     ),
                     Text("Access QR-Code For Visitor"),
                   ]),
@@ -46,7 +51,10 @@ class TopBanner extends StatelessWidget {
                 image: "assets/images/art 77.png",
                 category: "",
                 numOfBrands: 24,
-                press: () {},
+                press: () {
+                  Navigator.push(context, new MaterialPageRoute(
+                      builder: (context) => new Genrator()));
+                },
               ),
                     Text("QR-Code Entry For Residence"),
                   ]),

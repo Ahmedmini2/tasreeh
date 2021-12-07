@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tsareeh/Screens/QR-Code/componants/body2.dart';
 import 'package:tsareeh/Screens/QR-Code/genrator.dart';
 import 'package:tsareeh/Screens/QR-Code/scanner.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 
 class CatigoryW2 extends StatelessWidget {
@@ -50,6 +51,9 @@ class CatigoryW2 extends StatelessWidget {
           Navigator.push(context, new MaterialPageRoute(
               builder: (context) => new Genrator())
           );
+        } else if(this.number == 0 ){
+          Fluttertoast.showToast(msg: 'Comming Soon');
+
         }
 
 

@@ -40,7 +40,7 @@ class PopularProducts extends StatelessWidget {
                   text: 'Fingerprint Access',
 
                   color: const Color(0x9ED9D9D9),
-                  number: 201,
+                  number: 0,
                 ),
               ]),
             Padding(padding: EdgeInsets.symmetric(vertical: 10)),
@@ -54,7 +54,7 @@ class PopularProducts extends StatelessWidget {
                         text: 'Face Access',
 
                         color: const Color(0x9ED9D9D9),
-                        number: 200,
+                        number: 0,
                       ),
                       Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
                       CatigoryW2(
@@ -62,7 +62,7 @@ class PopularProducts extends StatelessWidget {
                         text: 'Password Access',
 
                         color: const Color(0x9ED9D9D9),
-                        number: 201,
+                        number: 0,
                       ),
                     ]),
           Padding(padding: EdgeInsets.symmetric(vertical: 10)),
@@ -76,7 +76,7 @@ class PopularProducts extends StatelessWidget {
                   text: 'WiFi Open',
 
                   color: const Color(0x9ED9D9D9),
-                  number: 200,
+                  number: 0,
                 ),
         ]),
 

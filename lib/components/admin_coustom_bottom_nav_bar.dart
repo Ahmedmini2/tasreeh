@@ -53,18 +53,7 @@ class AdminCustomBottomNavBar extends StatelessWidget {
                     ),
               ),
 
-              IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/User Icon.svg",
-                  color: MenuState.profile == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
-                ),
-                onPressed: () =>
-                    Navigator.push(context, new MaterialPageRoute(
-                        builder: (context) => new ProfileScreen())
-                    ),
-              ),
+
             ],
           )),
     );

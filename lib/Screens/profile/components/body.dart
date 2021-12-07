@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tsareeh/Screens/Signup/Models/user_modle.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tsareeh/Screens/profile/contactus/contact.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:tsareeh/Screens/profile/settings/settings.dart';
 
 import 'profile_menu.dart';
@@ -49,7 +50,9 @@ class _Body extends State<Body> {
           ProfileMenu(
             text: "Request QR-Code Change",
             icon: "assets/icons/Bell.svg",
-            press: () {},
+            press: () {
+              Fluttertoast.showToast(msg: 'Your Request Have been send seccessfully Please wait');
+            },
           ),
           ProfileMenu(
             text: "Settings",
