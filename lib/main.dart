@@ -13,6 +13,7 @@ import 'package:tsareeh/introduction_animation/splash.dart';
 import 'Screens/home/Admin Dashboard/dashboard.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'app_theme.dart';
+import 'dart:io';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -55,7 +55,7 @@ class _Body extends State<Body> {
             press: () {},
           ),
           ProfileMenu(
-            text: "Help Center",
+            text: "Contact Us",
             icon: "assets/icons/Question mark.svg",
             press: () {},
           ),
