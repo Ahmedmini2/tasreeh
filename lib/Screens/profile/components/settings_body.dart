@@ -4,6 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tsareeh/Screens/Signup/Models/user_modle.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tsareeh/Screens/profile/contactus/contact.dart';
+import 'package:app_settings/app_settings.dart';
+
 
 import 'profile_menu.dart';
 import 'profile_pic.dart';
@@ -41,8 +43,10 @@ class _SettingsBody extends State<SettingsBody> {
           SizedBox(height: 20),
           ProfileMenu(
             text: "Application Language",
-            icon: "assets/icons/Untitled-1.png",
-            press: () => {},
+            icon: "assets/icons/Question mark.svg",
+            press: () => {
+
+            },
           ),
           ProfileMenu(
             text: "Allow Push Messages",
@@ -51,26 +55,22 @@ class _SettingsBody extends State<SettingsBody> {
           ),
           ProfileMenu(
             text: "Camera Permission",
-            icon: "assets/icons/Camera Icon.svg",
-            press: () {},
+            icon: "assets/icons/Settings.svg",
+            press: () {
+              AppSettings.openAppSettings();
+            },
           ),
           ProfileMenu(
             text: "Location Permission",
-            icon: "assets/icons/Untitled-1.png",
+            icon: "assets/icons/Settings.svg",
             press: () {
-              Navigator.push(context, new MaterialPageRoute(
-                  builder: (context) => new ContactUS()));
+
+                AppSettings.openAppSettings();
+
             },
           ),
-          ProfileMenu(
-            text: "Log Out",
-            icon: "assets/icons/Log out.svg",
-            press: () {
-              FirebaseAuth.instance.signOut();
-              Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
-                  LoginScreen()), (Route<dynamic> route) => false);
-            },
-          ),
+
+
 
         ],
       ),
