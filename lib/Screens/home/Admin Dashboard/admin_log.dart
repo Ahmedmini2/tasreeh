@@ -75,7 +75,7 @@ class AdminLog extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text("QR-CODE: \n" ,style: TextStyle(fontSize: 20)),
+                                    Text("QR-CODE: \n" ,style: TextStyle(fontSize: 20),maxLines: 2,),
 
 
                                   ],
@@ -83,7 +83,7 @@ class AdminLog extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(doc['qrcode'].toString(), style: TextStyle(fontSize: 20)),
+                                    Text(doc['qrcode'].toString(), style: TextStyle(fontSize: 15) , maxLines: 2,),
 
 
                                   ],
