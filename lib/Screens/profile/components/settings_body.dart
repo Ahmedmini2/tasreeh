@@ -4,16 +4,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tsareeh/Screens/Signup/Models/user_modle.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tsareeh/Screens/profile/contactus/contact.dart';
-import 'package:tsareeh/Screens/profile/settings/settings.dart';
 
 import 'profile_menu.dart';
 import 'profile_pic.dart';
 
-class Body extends StatefulWidget {
-  _Body createState() => _Body();
+class SettingsBody extends StatefulWidget {
+  _SettingsBody createState() => _SettingsBody();
 
 }
-class _Body extends State<Body> {
+class _SettingsBody extends State<SettingsBody> {
 
 
   User? user = FirebaseAuth.instance.currentUser;
@@ -39,29 +38,25 @@ class _Body extends State<Body> {
       padding: EdgeInsets.symmetric(vertical: 20),
       child: Column(
         children: [
-          ProfilePic(),
           SizedBox(height: 20),
           ProfileMenu(
-            text: "${loggedInUser.userName}",
-            icon: "assets/icons/User Icon.svg",
+            text: "Application Language",
+            icon: "assets/icons/Untitled-1.png",
             press: () => {},
           ),
           ProfileMenu(
-            text: "Request QR-Code Change",
+            text: "Allow Push Messages",
             icon: "assets/icons/Bell.svg",
             press: () {},
           ),
           ProfileMenu(
-            text: "Settings",
-            icon: "assets/icons/Settings.svg",
-            press: () {
-              Navigator.push(context, new MaterialPageRoute(
-                  builder: (context) => new SettingsScreen()));
-            },
+            text: "Camera Permission",
+            icon: "assets/icons/Camera Icon.svg",
+            press: () {},
           ),
           ProfileMenu(
-            text: "Contact Us",
-            icon: "assets/icons/Question mark.svg",
+            text: "Location Permission",
+            icon: "assets/icons/Untitled-1.png",
             press: () {
               Navigator.push(context, new MaterialPageRoute(
                   builder: (context) => new ContactUS()));
