@@ -11,6 +11,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tsareeh/Screens/Signup/Models/user_modle.dart';
 import 'package:gallery_saver/gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:share/share.dart';
 
 import '../../../constants.dart';
 
@@ -90,9 +91,30 @@ class _Body extends State<Body> {
 
 
             RoundedButton(
+              text: "Share",
+              press: () async {
+                String path = await createQrPicture(loggedInUser.qrCode.toString());
+
+
+                await Share.shareFiles(
+                    [path],
+                    mimeTypes: ["image/png"],
+                    subject: 'My QR code',
+                    text: 'Please scan me'
+                );
+              },
+            ),
+
+            RoundedButton(
               text: "Save",
-              press: () {
-                createQrPicture(loggedInUser.qrCode.toString());
+              press: () async {
+                String path = await createQrPicture(loggedInUser.qrCode.toString());
+
+                bool? success = await GallerySaver.saveImage(path);
+
+                Scaffold.of(context).showSnackBar(SnackBar(
+                  content: success! ? Text('Image saved to Gallery') : Text('Error saving image'),
+                ));
               },
             ),
 
@@ -122,7 +144,7 @@ class _Body extends State<Body> {
 
     final painter = QrPainter.withQr(
       qr: qrCode!,
-      color: const Color(0xFF000000),
+      color: const Color(0xFFFFFFFF),
       gapless: true,
       embeddedImageStyle: null,
       embeddedImage: null,
@@ -134,6 +156,8 @@ class _Body extends State<Body> {
     String path = '$tempPath/$ts.png';
     final picData = await painter.toImageData(2048, format: ImageByteFormat.png);
     await writeToFile(picData!, path);
+
+
     return path;
   }
 
