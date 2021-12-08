@@ -101,6 +101,7 @@ class _Body extends State<Body> {
                     mimeTypes: ["image/png"],
                     subject: 'My QR code',
                     text: 'Please scan me'
+                        ' QR Inviter : ${loggedInUser.userName}'
                 );
               },
             ),
