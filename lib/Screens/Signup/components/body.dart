@@ -171,29 +171,29 @@ class _Body extends State<Body> {
   Future<void> _signInWithApple(BuildContext context) async {
     try {
       final authService = Provider.of<AuthService>(context, listen: false);
-      final user = await authService.signInWithApple(
+      final appleuser = await authService.signInWithApple(
           scopes: [Scope.email, Scope.fullName]);
-      print('uid: ${user.uid}');
+      print('uid: ${appleuser.uid}');
 
 
 
 
       FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-      User? userapple = _auth.currentUser;
+      User? user = _auth.currentUser;
 
       UserModel userModel = UserModel();
 
       // writing all values
 
       userModel.email = Scope.email as String?;
-      userModel.uid = user.uid;
+      userModel.uid = user?.uid;
       userModel.userName = Scope.fullName as String;
       userModel.qrCode = userModel.userName.toString() + user.uid;
 
 
 
       await firebaseFirestore.collection("users")
-          .doc(user.uid)
+          .doc(user?.uid)
           .set(userModel.toMap());
       Fluttertoast.showToast(msg: 'Account Created Successfully');
 
