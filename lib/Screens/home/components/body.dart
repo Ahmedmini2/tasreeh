@@ -20,10 +20,10 @@ class Body extends StatelessWidget {
 
 
             TopBanner(),
-            SizedBox(height: 30),
+            SizedBox(height: 15),
             PopularProducts(),
 
-            SizedBox(height: 30),
+            SizedBox(height: 15),
           ],
         ),
       ),

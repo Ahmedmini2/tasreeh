@@ -41,7 +41,10 @@ class TopBanner extends StatelessWidget {
                             builder: (context) => new RandomQR()));
                       },
                     ),
-                    Text("Access QR-Code For Visitor"),
+                    SizedBox(height: 20,),
+                    Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Text("Access QR-Code For Visitor")),
                   ]),
                   Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -56,10 +59,12 @@ class TopBanner extends StatelessWidget {
                       builder: (context) => new Genrator()));
                 },
               ),
-                    
-                    Text("QR-Code Entry For Residence"),
+                    SizedBox(height: 20,),
+                    Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Text("QR-Code Entry For Residence")),
                   ]),
-              SizedBox(width: 20),
+
             ],
           ),
         ),
