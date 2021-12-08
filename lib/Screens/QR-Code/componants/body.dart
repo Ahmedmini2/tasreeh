@@ -90,21 +90,7 @@ class _Body extends State<Body> {
 
 
 
-            RoundedButton(
-              text: "Share",
-              press: () async {
-                String path = await createQrPicture(loggedInUser.qrCode.toString());
 
-
-                await Share.shareFiles(
-                    [path],
-                    mimeTypes: ["image/png"],
-                    subject: 'My QR code',
-                    text: 'Please scan me'
-                        ' QR Inviter : ${loggedInUser.userName}'
-                );
-              },
-            ),
 
             RoundedButton(
               text: "Save",

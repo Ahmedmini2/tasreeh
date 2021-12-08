@@ -56,6 +56,7 @@ class TopBanner extends StatelessWidget {
                       builder: (context) => new Genrator()));
                 },
               ),
+                    
                     Text("QR-Code Entry For Residence"),
                   ]),
               SizedBox(width: 20),
