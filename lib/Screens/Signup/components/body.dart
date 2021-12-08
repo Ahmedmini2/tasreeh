@@ -16,6 +16,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:the_apple_sign_in/the_apple_sign_in.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import 'background.dart';
 import 'or_divider.dart';
@@ -25,6 +26,7 @@ class Body extends StatefulWidget {
 
 }
 class _Body extends State<Body> {
+  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
   final _auth = FirebaseAuth.instance;
 
   final userNameController = new TextEditingController();
@@ -35,8 +37,8 @@ class _Body extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-    final appleSignInAvailable =
-    Provider.of<AppleSignInAvailable>(context, listen: false);
+    GoogleSignInAccount? user = _googleSignIn.currentUser;
+
     Size size = MediaQuery.of(context).size;
     return Background(
       child: SingleChildScrollView(
@@ -96,14 +98,21 @@ class _Body extends State<Body> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                if(appleSignInAvailable.isAvailable)
+
                 SocalIcon(
                   iconSrc: "assets/icons/apple-seeklogo.com.svg",
-                  press: () {},
+                  press: () {
+                    _signInWithApple(context);
+                  },
                 ),
                 SocalIcon(
                   iconSrc: "assets/icons/google-plus.svg",
-                  press: () {},
+                  press: () async {
+                    await signInWithGoogle();
+
+                      setState(() {});
+
+                  },
                 ),
               ],
             )
@@ -166,6 +175,9 @@ class _Body extends State<Body> {
           scopes: [Scope.email, Scope.fullName]);
       print('uid: ${user.uid}');
 
+
+
+
       FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
       User? userapple = _auth.currentUser;
 
@@ -196,6 +208,51 @@ class _Body extends State<Body> {
   }
 
 
+
+
+  // Google Sign In
+
+
+  Future signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication googleAuth = await googleUser!.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    await  FirebaseAuth.instance.signInWithCredential(credential);
+
+    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+    User? user = _auth.currentUser;
+
+    UserModel userModel = UserModel();
+
+    // writing all values
+
+    userModel.email = googleUser.email;
+    userModel.uid = user!.uid;
+    userModel.userName = googleUser.displayName;
+    userModel.qrCode = userModel.userName.toString() + userModel.uid.toString();
+
+
+
+    await firebaseFirestore.collection("users")
+        .doc(user?.uid)
+        .set(userModel.toMap());
+    Fluttertoast.showToast(msg: 'Account Created Successfully');
+
+
+    // Once signed in, return the UserCredential
+    Navigator.pushAndRemoveUntil(context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+            (route) => false);
+  }
 
 
 

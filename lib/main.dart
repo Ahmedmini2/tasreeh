@@ -5,12 +5,12 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:tsareeh/Screens/Login/login_screen.dart';
+import 'package:tsareeh/Screens/Signup/providers/apple_auth.dart';
 import 'package:tsareeh/Screens/home/home_screen.dart';
 import 'package:tsareeh/introduction_animation/introduction_animation_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tsareeh/introduction_animation/splash.dart';
 
-import 'Screens/Signup/providers/apple_auth.dart';
 import 'Screens/Signup/providers/apple_sign_in_available.dart';
 import 'Screens/home/Admin Dashboard/dashboard.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
       systemNavigationBarDividerColor: Colors.transparent,
       systemNavigationBarIconBrightness: Brightness.dark,
     ));
-    return Provider<AuthService>(
+    return  Provider<AuthService>(
     create: (_) => AuthService(),
       child: MaterialApp(
         title: 'Flutter UI',

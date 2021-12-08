@@ -9,12 +9,16 @@ import 'package:tsareeh/Screens/profile/settings/settings.dart';
 
 import 'profile_menu.dart';
 import 'profile_pic.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
 
 class Body extends StatefulWidget {
   _Body createState() => _Body();
 
 }
 class _Body extends State<Body> {
+
+
 
 
   User? user = FirebaseAuth.instance.currentUser;
@@ -36,6 +40,7 @@ class _Body extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
+
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(vertical: 20),
       child: Column(
@@ -73,8 +78,9 @@ class _Body extends State<Body> {
           ProfileMenu(
             text: "Log Out",
             icon: "assets/icons/Log out.svg",
-            press: () {
+            press: () async {
               FirebaseAuth.instance.signOut();
+              await GoogleSignIn().signOut();
               Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
                   LoginScreen()), (Route<dynamic> route) => false);
             },
