@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_svg/svg.dart';
 import 'package:tsareeh/Screens/Login/login_screen.dart';
 import 'package:tsareeh/Screens/Signup/Models/user_modle.dart';
 import 'package:tsareeh/Screens/Signup/components/social_icon.dart';
 import 'package:tsareeh/Screens/Signup/providers/apple_auth.dart';
-import 'package:tsareeh/Screens/Signup/providers/apple_sign_in_available.dart';
 import 'package:tsareeh/Screens/home/home_screen.dart';
 import 'package:tsareeh/components/already_have_an_account_acheck.dart';
 import 'package:tsareeh/components/rounded_button.dart';
@@ -188,7 +185,7 @@ class _Body extends State<Body> {
       userModel.email = Scope.email as String?;
       userModel.uid = user?.uid;
       userModel.userName = Scope.fullName as String;
-      userModel.qrCode = userModel.userName.toString() + user.uid;
+      userModel.qrCode = userModel.userName.toString() + user!.uid;
 
 
 
