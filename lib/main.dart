@@ -10,14 +10,22 @@ import 'package:tsareeh/introduction_animation/introduction_animation_screen.dar
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tsareeh/introduction_animation/splash.dart';
 
+import 'Screens/Signup/providers/apple_auth.dart';
+import 'Screens/Signup/providers/apple_sign_in_available.dart';
 import 'Screens/home/Admin Dashboard/dashboard.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'app_theme.dart';
+import 'package:provider/provider.dart';
 import 'dart:io';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  final appleSignInAvailable = await AppleSignInAvailable.check();
+  runApp(Provider<AppleSignInAvailable>.value(
+    value: appleSignInAvailable,
+    child: MyApp(),
+  ));
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown
@@ -38,15 +46,18 @@ class MyApp extends StatelessWidget {
       systemNavigationBarDividerColor: Colors.transparent,
       systemNavigationBarIconBrightness: Brightness.dark,
     ));
-    return MaterialApp(
-      title: 'Flutter UI',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-          textTheme: AppTheme.textTheme,
-        platform: TargetPlatform.iOS,
+    return Provider<AuthService>(
+    create: (_) => AuthService(),
+      child: MaterialApp(
+        title: 'Flutter UI',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+            textTheme: AppTheme.textTheme,
+          platform: TargetPlatform.iOS,
+        ),
+        home: new Splash(),
       ),
-      home: new Splash(),
     );
   }
 }
