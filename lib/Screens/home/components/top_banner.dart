@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tsareeh/Screens/QR-Code/genrator.dart';
 import 'package:tsareeh/Screens/QR-Code/random_qr.dart';
+import 'package:tsareeh/Screens/Request%20Qr%20Code/myrequest.dart';
+import 'package:tsareeh/Screens/Request%20Qr%20Code/requestqr.dart';
 
 import '../../../size_config.dart';
 import 'section_title.dart';
@@ -33,7 +35,7 @@ class TopBanner extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children:[
                     SpecialOfferCard(
-                      image: "assets/images/Artboard 5.png",
+                      image: "assets/images/Artboard 12.png",
                       category: "",
                       numOfBrands: 15,
                       press: () {
@@ -41,28 +43,47 @@ class TopBanner extends StatelessWidget {
                             builder: (context) => new RandomQR()));
                       },
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: 10,),
                     Padding(
                         padding: EdgeInsets.only(left: 20),
-                        child: Text("Access QR-Code For Visitor")),
+                        child: Text("Visitor Qr-Code")),
                   ]),
                   Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                   children:[
               SpecialOfferCard(
-                image: "assets/images/art 77.png",
+                image: "assets/images/Artboard 10.png",
                 category: "",
                 numOfBrands: 24,
                 press: () {
                   Navigator.push(context, new MaterialPageRoute(
-                      builder: (context) => new Genrator()));
+                      builder: (context) => new RequestQR()));
                 },
               ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: 10,),
                     Padding(
                         padding: EdgeInsets.only(left: 20),
-                        child: Text("QR-Code Entry For Residence")),
+                        child: Text("Request Qr Code")),
+                  ]),
+
+              Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children:[
+                    SpecialOfferCard(
+                      image: "assets/images/Artboard 8.png",
+                      category: "",
+                      numOfBrands: 24,
+                      press: () {
+                        Navigator.push(context, new MaterialPageRoute(
+                            builder: (context) => new MyRequest()));
+                      },
+                    ),
+                    SizedBox(height: 10,),
+                    Padding(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Text("My Codes")),
                   ]),
 
             ],

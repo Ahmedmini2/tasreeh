@@ -63,7 +63,7 @@ class _ProfilePic extends State<ProfilePic> {
                   _image!,
                   fit: BoxFit.fill,
                 ):Image.asset(
-                  "assets/images/applogo.png",
+                  "assets/images/applogo2.png",
                   fit: BoxFit.fill,
                 ),
               ),

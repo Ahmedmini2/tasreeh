@@ -49,7 +49,7 @@ class AdminServices extends StatelessWidget {
                           text: ' Qr Code For Visitor',
 
                           color: const Color(0x9ED9D9D9),
-                          number: 102,
+                          number: 101,
                         ),
                         Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
 

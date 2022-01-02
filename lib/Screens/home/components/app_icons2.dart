@@ -27,7 +27,9 @@ class CatigoryW2 extends StatelessWidget {
           color: Color(0xCBFFFFFF),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+
             SizedBox(
               height: 15,
             ),
@@ -41,7 +43,7 @@ class CatigoryW2 extends StatelessWidget {
             ),
             Text(
               text,
-              style: TextStyle(color: Colors.black, fontSize: 16, fontFamily: 'BankGR'),
+              style: TextStyle(color: Colors.black, fontSize: 12, fontFamily: 'BankGR'),
             ),
           ],
         ),

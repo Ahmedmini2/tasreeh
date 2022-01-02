@@ -9,6 +9,7 @@ import 'package:tsareeh/components/rounded_input_field.dart';
 import 'package:tsareeh/components/rounded_password_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'background.dart';
 
@@ -86,6 +87,8 @@ class _Body extends State<Body> {
 
   void signin(String email, String password) async
   {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setInt('counter', 0);
 
     if(emailController.text != "" && passwordController.text != "")
     {

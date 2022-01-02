@@ -25,11 +25,12 @@ class PopularProducts extends StatelessWidget {
               children: <Widget>[
           Row(
           mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
 
               children: [
                 CatigoryW2(
                   image: 'assets/images/Artboard 40.png',
-                  text: 'QR-Code Access',
+                  text: 'QR-Code',
 
                   color: const Color(0x9ED9D9D9),
                   number: 200,
@@ -37,7 +38,7 @@ class PopularProducts extends StatelessWidget {
                 Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
                 CatigoryW2(
                   image: 'assets/images/Artboard 4.png',
-                  text: 'Fingerprint Access',
+                  text: 'Fingerprint',
 
                   color: const Color(0x9ED9D9D9),
                   number: 0,
@@ -51,7 +52,7 @@ class PopularProducts extends StatelessWidget {
                     children: [
                       CatigoryW2(
                         image: 'assets/images/Artboard 3.png',
-                        text: 'Face Access',
+                        text: 'Face',
 
                         color: const Color(0x9ED9D9D9),
                         number: 0,
@@ -59,7 +60,7 @@ class PopularProducts extends StatelessWidget {
                       Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
                       CatigoryW2(
                         image: 'assets/images/service1.png',
-                        text: 'Password Access',
+                        text: 'Password',
 
                         color: const Color(0x9ED9D9D9),
                         number: 0,
