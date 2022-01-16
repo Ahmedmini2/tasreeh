@@ -227,12 +227,12 @@ class _Body extends State<Body> {
     print(qrRequests.time);
     print(qrRequests.date);
     print(qrRequests.numberOfPeople);
-
+  var docm = qrRequests.id! + qrRequests.time!;
 
 
 
     await firebaseFirestore.collection("qrrequest")
-        .doc()
+        .doc(docm)
         .set(qrRequests.toMap());
     Fluttertoast.showToast(msg: 'QR Added Seccesfully to Log File');
 

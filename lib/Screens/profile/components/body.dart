@@ -79,10 +79,11 @@ class _Body extends State<Body> {
             text: "Log Out",
             icon: "assets/icons/Log out.svg",
             press: () async {
-              FirebaseAuth.instance.signOut();
-              await GoogleSignIn().signOut();
               Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
                   LoginScreen()), (Route<dynamic> route) => false);
+              FirebaseAuth.instance.signOut();
+              await GoogleSignIn().signOut();
+
             },
           ),
 

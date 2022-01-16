@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:tsareeh/Screens/QR-Code/scanner.dart';
 import 'package:tsareeh/Screens/home/Admin%20Dashboard/admin_log.dart';
+import 'package:tsareeh/Screens/home/Admin%20Dashboard/admin_qr_request.dart';
 
 
 
@@ -55,7 +56,12 @@ class AdminCatigoryW2 extends StatelessWidget {
           Navigator.push(context, new MaterialPageRoute(
               builder: (context) => new AdminLog())
           );
-        }
+
+      } else if(this.number == 102 ){
+      Navigator.push(context, new MaterialPageRoute(
+          builder: (context) => new AdminQRRequest())
+      );
+    }
 
 
 

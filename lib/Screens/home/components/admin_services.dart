@@ -46,10 +46,10 @@ class AdminServices extends StatelessWidget {
                       children: [
                         AdminCatigoryW2(
                           image: 'assets/images/Artboard 52.png',
-                          text: ' Qr Code For Visitor',
+                          text: 'QR Request',
 
                           color: const Color(0x9ED9D9D9),
-                          number: 101,
+                          number: 102,
                         ),
                         Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
 
